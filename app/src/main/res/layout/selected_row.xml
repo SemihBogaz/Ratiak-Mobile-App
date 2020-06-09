@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <!-- rating star -->
+        <RatingBar
+            android:id="@+id/detailStar"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:theme="@style/ratingBar"
+            android:transformPivotX="10dp"/>
+
+        <!-- Course code -->
+        <TextView
+            android:id="@+id/course_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="course code here"
+            android:paddingLeft="5dp"
+            android:textSize="16dp"/>
+
+        <!-- Department -->
+        <TextView
+            android:id="@+id/department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="department goes here"
+            android:paddingLeft="5dp"
+            android:textSize="16dp"/>
+
+        <!-- Semester -->
+        <TextView
+            android:id="@+id/semester"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="semester goes here"
+            android:paddingLeft="5dp"
+            android:textSize="16dp"/>
+
+        <!-- Comment -->
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="comment goes here"
+            android:paddingLeft="5dp"
+            android:textSize="16dp"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
