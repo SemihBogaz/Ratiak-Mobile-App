@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- layout to add new comment  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <!-- showing name -->
+    <!-- include custom detail_toolbar -->
+    <include
+        android:id="@+id/newLecttoolbar"
+        layout="@layout/newlect_toolbar"/>
+
+    <!-- enter name -->
+    <EditText
+        android:id="@+id/name_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_back"
+        android:hint="Enter name of lecturer"
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <!-- enter course code -->
+    <EditText
+        android:id="@+id/new_code_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/name_add"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_back"
+        android:hint="Enter course code exp:CSE200"
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <!-- enter department -->
+    <EditText
+        android:id="@+id/new_department_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/code_add"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/edit_back"
+        android:hint="Enter department of the lecture"
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <!-- enter semester -->
+    <EditText
+        android:id="@+id/new_semester_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/department_add"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_back"
+        android:hint="Year-Semester  "
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <!-- enter rate -->
+    <!-- rating star -->
+    <RatingBar
+        android:id="@+id/new_addStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1"
+        android:layout_below="@+id/semester_add"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:theme="@style/ratingBar"
+        />
+
+    <!-- enter comment -->
+    <EditText
+        android:id="@+id/new_comment_add"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_below="@+id/addStar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/edit_back"
+        android:gravity="start"
+        android:hint="Enter your comment"
+        android:inputType="text|textMultiLine|textCapSentences"
+        android:padding="10dp" />
+
+    <!-- save button -->
+    <Button
+        android:id="@+id/new_save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="save"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
