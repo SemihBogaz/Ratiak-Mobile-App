@@ -29,8 +29,6 @@ public class DetailActivity extends AppCompatActivity {
 
     private FirebaseFirestore firebaseFirestore;
 
-//    private RatingBar ratingBar;
-
     //add floating action button
     private FloatingActionButton fab;
 
@@ -49,8 +47,6 @@ public class DetailActivity extends AppCompatActivity {
 
         //firebase object
         firebaseFirestore= FirebaseFirestore.getInstance();
-
-//        ratingBar = findViewById(R.id.detailStar);
 
         //binding custom toolbar
         Toolbar toolbar =findViewById(R.id.detail_toolbar);
@@ -133,4 +129,16 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed(){
+        backButtonHandler();
+    }
+
+    public void backButtonHandler() {
+        Intent goMain = new Intent(DetailActivity.this, MainActivity.class);
+        startActivity(goMain);
+    }
+
+
 }

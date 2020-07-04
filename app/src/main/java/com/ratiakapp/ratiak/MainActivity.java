@@ -1,17 +1,22 @@
 package com.ratiakapp.ratiak;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -28,15 +33,19 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
     //definitions
     ArrayList<String> lectNameList;
-    //ArrayList<List<Map<String, String>>> lectRatingList; gerek yok
     RecyclerView mRecyclerView;
     LectAdapter mLectAdapter;
+    TextView dontFindView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent fromDetail = getIntent();
+        //textview binding
+        dontFindView = findViewById(R.id.dontFind);
 
         //binding custom toolbar
         Toolbar toolbar =findViewById(R.id.toolbar);
@@ -119,7 +128,6 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                     }
                 }
                 mLectAdapter.updateList(liste);
-                //mLectAdapter.getFilter().filter(newText);
                 return true;
             }
 
@@ -133,6 +141,43 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         Intent intent =new Intent(this,DetailActivity.class);
         intent.putExtra("sName",lectNameList.get(pos));
         startActivity(intent);
+        finish();
 
     }
+    public void dontFind(View view){
+        Intent find = new Intent(MainActivity.this,NewLectActivity.class);
+        startActivity(find);
+    }
+
+    @Override
+    public void onBackPressed(){
+        backButtonHandler();
+    }
+
+    public void backButtonHandler() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                MainActivity.this);
+        // Setting Dialog Title
+        alertDialog.setTitle("Leave application?");
+        // Setting Dialog Message
+        alertDialog.setMessage("Are you sure you want to leave the application?");
+        // Setting Positive "Yes" Button
+        alertDialog.setPositiveButton("YES",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("NO",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+        // Showing Alert Message
+        alertDialog.show();
+    }
+
+
 }
