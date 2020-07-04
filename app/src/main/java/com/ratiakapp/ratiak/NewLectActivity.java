@@ -39,7 +39,7 @@ public class NewLectActivity extends AppCompatActivity implements GoogleApiClien
 
     //definition for recaptcha
     private GoogleApiClient googleApiClient;
-    private String SITE_KEY="6LdETgAVAAAAAMBoQE9JSRVXSKEsfJyHCTUO5g4u";
+    private String SITE_KEY="###";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
