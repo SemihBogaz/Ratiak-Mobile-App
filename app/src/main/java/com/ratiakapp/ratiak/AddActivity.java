@@ -38,7 +38,7 @@ public class AddActivity extends AppCompatActivity implements GoogleApiClient.Co
 
     //definition for recaptcha
     private GoogleApiClient googleApiClient;
-    private String SITE_KEY="6LdETgAVAAAAAMBoQE9JSRVXSKEsfJyHCTUO5g4u";
+    private String SITE_KEY="###";
 
     //form definitions
     private TextView Name;
